@@ -10,10 +10,10 @@ services:
       - "8080:8080"
     volumes:
       - /dev/null:/traefik.toml
-    command: --web --docker --docker.domain=docker.localhost --logLevel=DEBUG --docker.endpoint tcp://192.168.200.1:2378 --docker.watch
+    command: --web --docker --docker.domain=docker.localhost --logLevel=DEBUG --docker.endpoint tcp://192.168.1.20:2378 --docker.watch
 
   whoami:
-    image: hypriot/rpi-whoami
+    image: billbriscoeawg/rpi-busybox-httpd
     depends_on:
         - traefik
     environment:
